@@ -81,7 +81,7 @@ class Signup(BaseHandler):
             self.render('signup-form.html', **params)
         else:
             self.redirect('/unit2/welcome?username=' + username)
-
+#welcome page
 class Welcome(BaseHandler):
     def get(self):
         username = self.request.get('username')
