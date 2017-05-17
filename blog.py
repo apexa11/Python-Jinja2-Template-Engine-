@@ -47,6 +47,7 @@ EMAIL_RE  = re.compile(r'^[\S]+@[\S]+\.[\S]+$')
 def valid_email(email):
     return not email or EMAIL_RE.match(email)
 
+#for sign up page
 class Signup(BaseHandler):
 
     def get(self):
@@ -81,7 +82,8 @@ class Signup(BaseHandler):
             self.render('signup-form.html', **params)
         else:
             self.redirect('/unit2/welcome?username=' + username)
-#welcome page
+
+#for welcome page
 class Welcome(BaseHandler):
     def get(self):
         username = self.request.get('username')
